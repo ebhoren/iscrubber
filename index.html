@@ -11,11 +11,15 @@
 </head>
 
 <style type="text/css" media="screen">
-  #main{text-align:center;font-family: "Trebuchet MS",Helvetica,sans-serif;width: 800px;margin: 0 auto;}
+  #main{text-align:center;font-family: "Trebuchet MS",Helvetica,sans-serif;width: 100%;margin: 0 auto;}
   .box{float:left;margin:30px 20px;width:45%;box-sizing:border-box;}
+  .box.responsive { border: 1px solid red;}
+  .box.responsive ul { width: 100%; }
+  .box.responsive li { width: 100%; }
+  .box.responsive img { width: 100%; height: auto; }
   .clearfix:after {content: "";display: table;clear: both;}
   .content{margin: 20px 0;}
-  ul.scrubber{margin:0 auto;}
+  ul.scrubber{margin:0 auto; padding: 0; }
 </style>
 
 <body>
@@ -80,6 +84,27 @@
           <small>Combined iScrubber (combined mouse movement)</small>
         </div> <!-- /.box -->
 
+        <h2 style="clear: both;">Responsive</h2>
+
+
+        <div class="box responsive">
+          <ul class="scrubber scrubber-responsive-horizontal">
+            <li><img src="images/image1.png"></li>
+            <li><img src="images/image2.png"></li>
+            <li><img src="images/image3.png"></li>
+            <li><img src="images/image4.png"></li>
+            <li><img src="images/image5.png"></li>
+            <li><img src="images/image6.png"></li>
+            <li><img src="images/image7.png"></li>
+            <li><img src="images/image8.png"></li>
+            <li><img src="images/image9.png"></li>
+            <li><img src="images/image10.png"></li>
+            <li><img src="images/image11.png"></li>
+            <li><img src="images/image12.png"></li>
+          </ul>
+          <small>Default iScrubber (responsive, horizontal mouse movement)</small>
+        </div>
+
       </div> <!-- /.content -->
 
       <a href="https://github.com/skarface/iscrubber.git" target="_blank">See on Github</a>
@@ -99,6 +124,10 @@
   $(".scrubber-combined").iscrubber(
     { direction: 'combined' }
   );
+
+  $(".scrubber-responsive-horizontal").iscrubber({
+    refreshOnWindowResize: true
+  });
 </script>
 
 </body>
